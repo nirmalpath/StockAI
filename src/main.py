@@ -1,8 +1,7 @@
-from logger import logger
-from config import SETTINGS
+from stockai.downloader.price_downloader import PriceDownloader
 
-logger.info("Starting StockAI")
+downloader = PriceDownloader()
 
-print("Configuration")
+df = downloader.download()
 
-print(SETTINGS)
+print(df.head())
