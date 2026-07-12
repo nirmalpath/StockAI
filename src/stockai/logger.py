@@ -7,7 +7,7 @@ logger.add(
     level="INFO"
 )   
 
-from logger import logger
+from src.stockai.logger import logger
 
 logger.info("Application started")
 logger.warning("Downloading prices")

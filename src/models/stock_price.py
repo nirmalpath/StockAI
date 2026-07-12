@@ -1,8 +1,5 @@
 from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy import Column
-from sqlalchemy import Float
-from sqlalchemy import Integer
-from sqlalchemy import String
+from sqlalchemy import Column, Integer, String, Float, Date
 
 
 class Base(DeclarativeBase):
@@ -10,35 +7,46 @@ class Base(DeclarativeBase):
 
 
 class StockPrice(Base):
-
     __tablename__ = "stock_prices"
 
     id = Column(Integer, primary_key=True)
 
-    ticker = Column(String)
+    ticker = Column(String, index=True)
 
-    price = Column(Float)
+    trade_date = Column(Date, index=True)
 
-    open = Column(Float)
+    open_price = Column(Float)
 
-    high = Column(Float)
+    high_price = Column(Float)
 
-    low = Column(Float)
+    low_price = Column(Float)
 
-    volume = Column(Float)
+    close_price = Column(Float)
 
     previous_close = Column(Float)
 
-    high52 = Column(Float)
+    volume = Column(Float)
 
-    low52 = Column(Float)
+    high_52 = Column(Float)
 
-    off_high = Column(Float)
+    low_52 = Column(Float)
 
-    pe = Column(Float)
+class CompanyProfile(Base):
+
+    __tablename__ = "company_profiles"
+
+    ticker = Column(String, primary_key=True)
+
+    company = Column(String)
 
     sector = Column(String)
 
+    industry = Column(String)
+
     market_cap = Column(Float)
 
-    download_date = Column(String)
+    pe_ratio = Column(Float)
+
+    dividend_yield = Column(Float)
+
+    last_updated = Column(Date)
