@@ -1,0 +1,16 @@
+market:
+  exchange: NSE
+
+download:
+  period: 1y
+  interval: 1d
+
+rules:
+  off_high: 10
+
+alerts:
+  email: false
+  telegram: false
+
+database:
+  type: sqlite
