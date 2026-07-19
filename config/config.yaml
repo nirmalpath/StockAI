@@ -1,0 +1,18 @@
+application:
+  name: StockAI
+  version: 0.1.0
+
+download:
+  workers: 8
+  retry_count: 3
+  timeout: 20
+
+database:
+  type: sqlite
+  path: database/stocks.db
+
+logging:
+  level: INFO
+
+market:
+  exchange: NSE
