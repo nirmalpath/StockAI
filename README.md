@@ -1,21 +1,12 @@
 # StockAI
 
-An AI-powered investment analysis platform built with Python.
+AI-powered stock analysis platform.
 
-## Features
+## Development Setup
 
-- Market data downloader
-- Technical indicators
-- Investment scoring
-- AI-generated summaries
-- Dashboard
-- Alerts
+### Clone Repository
 
-## Tech Stack
+```bash
+git clone <repository-url>
 
-- Python
-- SQLite
-- SQLAlchemy
-- Pandas
-- yFinance
-- Streamlit (later)
+cd StockAI
