@@ -2,8 +2,8 @@
 StockAI Application Entry Point.
 """
 
-from stockai.config import Settings
-from stockai.logger import setup_logger
+from stockai.core.config import Settings
+from stockai.core.logger import setup_logger
 
 
 def main():
