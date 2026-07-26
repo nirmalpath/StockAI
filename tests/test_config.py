@@ -1,4 +1,4 @@
-from stockai.config import Settings
+from stockai.core.config import Settings
 
 
 def test_config_load():
