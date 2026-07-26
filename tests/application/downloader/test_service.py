@@ -5,6 +5,7 @@ from stockai.domain.models import Quote
 
 import pytest
 
+
 class FakeMarketDataProvider:
     def get_quote(self, ticker, trade_date=None):
         return Quote(
@@ -94,9 +95,6 @@ def test_empty_watchlist():
     assert result.failed_count == 0
     assert result.quotes == []
     assert result.failures == []
-
-
-
 
 
 def test_invalid_worker_count():

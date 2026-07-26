@@ -4,6 +4,7 @@ Concurrent market data downloader.
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
+
 # from typing import Callable
 
 from loguru import logger
