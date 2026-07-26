@@ -6,10 +6,9 @@ from stockai.domain.models import Quote
 
 from stockai.application.downloader import DownloadFailure
 
+
 class FakeDownloader:
-
     def download(self, tickers, trade_date=None):
-
         return DownloadResult(
             quotes=[
                 Quote(
@@ -20,13 +19,12 @@ class FakeDownloader:
                     low_price=95.0,
                     close_price=105.0,
                     volume=100000,
-                )
-            ]
+                ),
+            ],
         )
 
 
 class FakePriceRepository:
-
     def __init__(self):
         self.saved_quotes = []
 
@@ -35,7 +33,6 @@ class FakePriceRepository:
 
 
 def test_download_and_store():
-
     downloader = FakeDownloader()
     repository = FakePriceRepository()
 
@@ -52,9 +49,7 @@ def test_download_and_store():
 
 
 def test_empty_download_does_not_save():
-
     class EmptyDownloader:
-
         def download(self, tickers, trade_date=None):
             return DownloadResult()
 
@@ -72,18 +67,15 @@ def test_empty_download_does_not_save():
 
 
 def test_failed_downloads_are_not_persisted():
-
     class FailingDownloader:
-
         def download(self, tickers, trade_date=None):
-
             return DownloadResult(
                 failures=[
                     DownloadFailure(
                         ticker="BAD.NS",
                         error="Data unavailable",
-                    )
-                ]
+                    ),
+                ],
             )
 
     repository = FakePriceRepository()
