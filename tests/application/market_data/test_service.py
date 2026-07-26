@@ -1,10 +1,8 @@
 from datetime import date
 
-from stockai.application.downloader import DownloadResult
+from stockai.application.downloader import DownloadFailure, DownloadResult
 from stockai.application.market_data import MarketDataService
 from stockai.domain.models import Quote
-
-from stockai.application.downloader import DownloadFailure
 
 
 class FakeDownloader:
@@ -19,8 +17,8 @@ class FakeDownloader:
                     low_price=95.0,
                     close_price=105.0,
                     volume=100000,
-                ),
-            ],
+                )
+            ]
         )
 
 
@@ -74,8 +72,8 @@ def test_failed_downloads_are_not_persisted():
                     DownloadFailure(
                         ticker="BAD.NS",
                         error="Data unavailable",
-                    ),
-                ],
+                    )
+                ]
             )
 
     repository = FakePriceRepository()
