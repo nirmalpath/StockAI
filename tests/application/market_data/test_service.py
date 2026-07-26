@@ -71,9 +71,6 @@ def test_empty_download_does_not_save():
     assert repository.saved_quotes == []
 
 
-
-
-
 def test_failed_downloads_are_not_persisted():
 
     class FailingDownloader:
