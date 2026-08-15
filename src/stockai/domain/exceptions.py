@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+
 class MarketDataError(Exception):
     """
     Raised when the market data provider fails to return a valid quote
@@ -10,4 +11,5 @@ class MarketDataError(Exception):
     Provider implementations should wrap lower-level exceptions in this
     type so callers can handle provider failures explicitly.
     """
+
     pass
