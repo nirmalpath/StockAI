@@ -4,7 +4,6 @@ Domain model representing a market quote.
 
 from dataclasses import dataclass
 from datetime import date
-from typing import Optional
 
 
 @dataclass(slots=True)
@@ -16,6 +15,6 @@ class Quote:
     low_price: float
     close_price: float
     volume: int
-    previous_close: Optional[float] = None
-    high_52_week: Optional[float] = None
-    low_52_week: Optional[float] = None
+    previous_close: float | None = None
+    high_52_week: float | None = None
+    low_52_week: float | None = None

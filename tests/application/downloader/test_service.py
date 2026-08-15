@@ -1,9 +1,10 @@
 from datetime import date
 
-from stockai.application.downloader import MarketDataDownloader
-from stockai.domain.models import Quote
-
 import pytest
+
+from stockai.application.downloader import MarketDataDownloader
+from stockai.domain.exceptions import MarketDataError
+from stockai.domain.models import Quote
 
 
 class FakeMarketDataProvider:
@@ -53,7 +54,7 @@ def test_one_failure_does_not_stop_other_downloads():
         def get_quote(self, ticker, trade_date=None):
 
             if ticker == "BAD.NS":
-                raise RuntimeError("Market data unavailable")
+                raise MarketDataError("Market data unavailable")
 
             return Quote(
                 ticker=ticker,
