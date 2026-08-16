@@ -2,16 +2,16 @@
 Concurrent market data downloader.
 """
 
-from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FutureTimeoutError
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import TimeoutError as FutureTimeoutError
 from datetime import date
 
 # from typing import Callable
-
 from loguru import logger
 
+from stockai.domain.exceptions import MarketDataError
 from stockai.domain.models import Quote
 from stockai.domain.repositories import MarketDataProvider
-from stockai.domain.exceptions import MarketDataError
 
 from .result import DownloadFailure, DownloadResult
 

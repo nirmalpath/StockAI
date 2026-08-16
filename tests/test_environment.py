@@ -1,4 +1,4 @@
-from stockai.config import Environment
+from stockai.core.config import Environment
 
 
 def test_environment_default():

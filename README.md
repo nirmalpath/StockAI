@@ -1,4 +1,7 @@
 # StockAI
+![Python](...)
+![Tests](...)
+![License](...)
 
 AI-powered stock analysis platform.
 
